@@ -1,0 +1,38 @@
+base_unit: optimizer-steps
+training_goal: 7680 # halved from LeoLM
+log_interval: -1
+eval_interval: 0.05
+eval_samples: 10000
+cross_tokenizer_val: True
+save_interval: 0.1
+warmup_period: 0.01 
+block_size: 4096 # changed from 8192, matches original mistral
+batch_size: 256 # down from 512 in LeoLM, squeeze in more updates
+weight_decay: 0.05
+max_lr: 4e-5 # increased from 2e-5 in LeoLM previously
+min_lr: 2e-6
+infinite_lr: -1 # use cosine schedule (no "infinite" lr schedule)
+beta1: 0.9
+beta2: 0.95
+grad_clip: 1.0
+seed: 42
+decontaminated_packing: False # we only implemented this for the hindsight study
+
+train_embeddings: True
+model_path: mistralai/Mistral-7B-v0.1
+out_dir: out/
+model_profiling: True
+model_profiling_interval: 10
+
+# Efficiency settings - adjust these to fit your hardware
+micro_batch_size: 1
+precision: bf16-true
+activation_checkpointing: False
+fsdp_sharding_strategy: "FULL_SHARD"
+compile: False
+use_additional_flash_attn_kernels: True
+adamw_foreach: True
+workers: 4
+num_devices: -1
+gradient_accumulation_no_sync: True
+use_paged_adamw: False

@@ -1,0 +1,4 @@
+deepfocus_init: true
+focus_auxiliary_mode: fasttext-tokenlevel
+focus_fasttext_model_path: "NEEDS_TO_BE_PROVIDED"
+focus_exact_match_all: true

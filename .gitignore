@@ -1,0 +1,20 @@
+__pycache__
+.idea
+.DS_Store
+*.egg-info
+build
+.venv/
+# .vscode
+evals/
+# data
+./data/
+datasets
+checkpoints/
+out/
+wandb/
+logs
+
+.pixi/
+
+tests/original_phi_1_5.py
+hfdownloads/*

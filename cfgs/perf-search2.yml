@@ -1,0 +1,21 @@
+# some setting specific to the node we performed the performance search on
+# also --mean_init true instead of FOCUS since it's ~NOOP and doesn't impact perf anyway and disable model_profiling as it's config agnostic
+
+data_dir: /raid/konstantin.dobler/culturax/de/tokenized/tokenizers_de_sp-bpe-de-32kauto/
+num_devices: -1 
+tokenizer_path: ./tokenizers/de/sp-bpe-de-32kauto/ 
+eval_samples: 64 
+out_dir: /raid/konstantin.dobler/checkpoints/ 
+compile: false 
+use_additional_flash_attn_kernels: true
+adamw_foreach: true 
+fsdp_limit_all_gathers: false
+mean_init: true
+model_profiling: False 
+training_goal: 12
+eval_interval: 100000 # never do
+save_interval: 100000 # never do
+perf_benchmark: true
+decontaminated_packing: true
+infinite_lr: -1
+lr_final_annealing_period: null

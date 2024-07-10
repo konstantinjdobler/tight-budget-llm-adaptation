@@ -1,0 +1,61 @@
+[project]
+name = "tight-budget-llm-adaptation"
+authors = [{ name = "Konstantin Dobler", email = "konstantin.dobler@hpi.de" }]
+dependencies = [
+    "torch==2.4.0.dev20240515+cu121",
+    "transformers>=4.40.2",
+    "datasets>=2.19.0",
+    "evaluate>=0.4.2",
+    "tokenizers>=0.19.1",
+    "accelerate>=0.30.1",
+    "optimum>=1.19.2",
+    "lightning>=2.2.4",
+    "scipy>=1.13.0",
+    "scikit-learn>=1.4.2",
+    "tqdm>=4.66.2",
+    "jsonargparse>=4.28.0",
+    "zstandard>=0.22.0",
+    "sentencepiece>=0.2.0",
+    "polars>=0.20.25",
+    "jsonlines>=4.0.0",
+    "numba>=0.59.1",
+    "matplotlib>=3.8.4",
+    "fire>=0.6.0",
+    "seqeval>=1.2.2",
+    "ninja>=1.11.1.1",
+    "ruff>=0.4.4",
+    "debugpy>=1.8.1",
+    "rich>=13.7.1",
+    "simple-parsing>=0.1.5",
+    "print-on-steroids[exceptions]>=1.2.3",
+    "bitsandbytes>=0.43.1",
+    "entmax>=1.3",
+    "deepfocus>=1.0.1",
+    "fasttext @ git+https://github.com/facebookresearch/fastText",
+    "wechsel>=0.0.4",
+    "setuptools>=69.5.1",
+    "wheel>=0.43.0",
+    "wandb>=0.17.0",
+    "lighteval>=0.3.0",
+    "hf-transfer>=0.1.6",
+    "datatrove[all]>=0.2.0",
+    "numpy>=1.26.4",
+]
+readme = "README.md"
+requires-python = ">= 3.11"
+license = { text = "MIT" }
+
+[tool.rye]
+managed = true
+virtual = true
+dev-dependencies = []
+lock-with-sources = true
+use-uv = true
+
+[tool.ruff]
+line-length = 128
+
+[[tool.rye.sources]]
+name = "pytorch"
+type = "index"
+url = "https://download.pytorch.org/whl/nightly/cu121"

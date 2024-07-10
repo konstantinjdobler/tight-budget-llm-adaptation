@@ -1,0 +1,39 @@
+base_unit: optimizer-steps
+training_goal: 7680
+log_interval: -1
+eval_interval: 0.05
+eval_samples: 10000
+save_interval: 0.1
+warmup_period: 0.01 
+lr_decay_period: 0.6
+lr_final_annealing_period: 0.14
+block_size: 4096 
+batch_size: 256 
+weight_decay: 0.05
+max_lr: 3.0e-5
+infinite_lr: 1.65e-5
+min_lr: 2.0e-6
+beta1: 0.9
+beta2: 0.95
+grad_clip: 1.0
+seed: 42
+decontaminated_packing: True
+
+model_path: mistralai/Mistral-7B-v0.1
+out_dir: out/
+model_profiling: True
+model_profiling_interval: 10
+
+
+# Efficiency settings
+micro_batch_size: 1
+precision: bf16-true
+activation_checkpointing: False
+fsdp_sharding_strategy: "FULL_SHARD"
+compile: False
+use_additional_flash_attn_kernels: True
+adamw_foreach: True
+workers: 4
+num_devices: -1
+gradient_accumulation_no_sync: True
+use_paged_adamw: False
