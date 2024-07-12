@@ -37,7 +37,7 @@ The German models all underperform Mistral-7B-v0.1 on German downstream tasks, h
 
 ## Experiments
 
-We perform our experiments using Docker images with pre-built dependencies for better reproducibility. We use two different images (one for our initial main experiments and another one with updates dependencies in our hindsight study).
+We perform our experiments using Docker images with pre-built dependencies for better reproducibility. We use two different images (one for our initial main experiments and another one with updated dependencies in our hindsight study).
 
 ### Environment
 
